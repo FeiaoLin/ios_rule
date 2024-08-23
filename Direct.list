@@ -112,51 +112,6 @@ DOMAIN-SUFFIX,hdslb.com
 DOMAIN-SUFFIX,im9.com
 DOMAIN-SUFFIX,smtcdns.net
 
-# ByteDance
-DOMAIN-SUFFIX,amemv.com
-DOMAIN-SUFFIX,bdxiguaimg.com
-DOMAIN-SUFFIX,bdxiguastatic.com
-DOMAIN-SUFFIX,byted-static.com
-DOMAIN-SUFFIX,bytedance.com
-DOMAIN-SUFFIX,bytedance.net
-DOMAIN-SUFFIX,bytedns.net
-DOMAIN-SUFFIX,bytednsdoc.com
-DOMAIN-SUFFIX,bytegoofy.com
-DOMAIN-SUFFIX,byteimg.com
-DOMAIN-SUFFIX,bytescm.com
-DOMAIN-SUFFIX,bytetos.com
-DOMAIN-SUFFIX,bytexservice.com
-DOMAIN-SUFFIX,douyin.com
-DOMAIN-SUFFIX,douyincdn.com
-DOMAIN-SUFFIX,douyinpic.com
-DOMAIN-SUFFIX,douyinstatic.com
-DOMAIN-SUFFIX,douyinvod.com
-DOMAIN-SUFFIX,feelgood.cn
-DOMAIN-SUFFIX,feiliao.com
-DOMAIN-SUFFIX,gifshow.com
-DOMAIN-SUFFIX,huoshan.com
-DOMAIN-SUFFIX,huoshanzhibo.com
-DOMAIN-SUFFIX,ibytedapm.com
-DOMAIN-SUFFIX,iesdouyin.com
-DOMAIN-SUFFIX,ixigua.com
-DOMAIN-SUFFIX,kspkg.com
-DOMAIN-SUFFIX,pstatp.com
-DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,toutiao.com
-DOMAIN-SUFFIX,toutiao13.com
-DOMAIN-SUFFIX,toutiaoapi.com
-DOMAIN-SUFFIX,toutiaocdn.com
-DOMAIN-SUFFIX,toutiaocdn.net
-DOMAIN-SUFFIX,toutiaocloud.com
-DOMAIN-SUFFIX,toutiaohao.com
-DOMAIN-SUFFIX,toutiaohao.net
-DOMAIN-SUFFIX,toutiaoimg.com
-DOMAIN-SUFFIX,toutiaopage.com
-DOMAIN-SUFFIX,wukong.com
-DOMAIN-SUFFIX,zijieapi.com
-DOMAIN-SUFFIX,zijieimg.com
-DOMAIN-SUFFIX,zjbyte.com
-DOMAIN-SUFFIX,zjcdn.com
 
 # CCTV
 DOMAIN-SUFFIX,cctv.com
@@ -177,16 +132,6 @@ DOMAIN-SUFFIX,vmall.com
 DOMAIN-SUFFIX,vmallres.com
 
 
-# Iqiyi
-DOMAIN-SUFFIX,71.am
-DOMAIN-SUFFIX,71edge.com
-DOMAIN-SUFFIX,iqiyi.com
-DOMAIN-SUFFIX,iqiyipic.com
-DOMAIN-SUFFIX,ppsimg.com
-DOMAIN-SUFFIX,qiyi.com
-DOMAIN-SUFFIX,qiyipic.com
-DOMAIN-SUFFIX,qy.net
-
 # PDD 拼多多
 DOMAIN-SUFFIX,pinduoduo.com
 DOMAIN-SUFFIX,yangkeduo.com
@@ -200,35 +145,6 @@ DOMAIN-SUFFIX,jd.hk
 DOMAIN-SUFFIX,jdcloud.com
 DOMAIN-SUFFIX,jdpay.com
 DOMAIN-SUFFIX,paipai.com
-
-# Kingsoft
-DOMAIN-SUFFIX,iciba.com
-DOMAIN-SUFFIX,ksosoft.com
-DOMAIN-SUFFIX,ksyun.com
-
-# Kuaishou 快手
-DOMAIN-SUFFIX,kuaishou.com
-DOMAIN-SUFFIX,yximgs.com
-
-# Meitu
-DOMAIN-SUFFIX,meitu.com
-DOMAIN-SUFFIX,meitudata.com
-DOMAIN-SUFFIX,meitustat.com
-DOMAIN-SUFFIX,meipai.com
-
-# LeTV 乐视
-DOMAIN-SUFFIX,le.com
-DOMAIN-SUFFIX,lecloud.com
-DOMAIN-SUFFIX,letv.com
-DOMAIN-SUFFIX,letvcloud.com
-DOMAIN-SUFFIX,letvimg.com
-DOMAIN-SUFFIX,letvlive.com
-DOMAIN-SUFFIX,letvstore.com
-
-# MGTV 芒果TV
-DOMAIN-SUFFIX,hitv.com
-DOMAIN-SUFFIX,hunantv.com
-DOMAIN-SUFFIX,mgtv.com
 
 # MI
 DOMAIN-SUFFIX,duokan.com
@@ -250,9 +166,6 @@ DOMAIN-SUFFIX,netease.com
 DOMAIN-SUFFIX,ydstatic.com
 DOMAIN-SUFFIX,youdao.com
 
-# PPTV、PPLive
-DOMAIN-SUFFIX,pplive.com
-DOMAIN-SUFFIX,pptv.com
 
 # Sina
 DOMAIN-SUFFIX,leju.com
@@ -309,12 +222,6 @@ DOMAIN-SUFFIX,tenpay.com
 DOMAIN-SUFFIX,wechat.com
 DOMAIN-SUFFIX,weixin.com
 DOMAIN-SUFFIX,weiyun.com
-
-# Vip 唯品会
-DOMAIN-SUFFIX,appsimg.com
-DOMAIN-SUFFIX,appvipshop.com
-DOMAIN-SUFFIX,vip.com
-DOMAIN-SUFFIX,vipstatic.com
 
 # Ximalaya 喜马拉雅
 DOMAIN-SUFFIX,ximalaya.com
