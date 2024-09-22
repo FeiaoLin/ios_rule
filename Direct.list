@@ -11,6 +11,7 @@ DOMAIN-SUFFIX,autodesk.com
 DOMAIN-KEYWORD,baidu
 DOMAIN-KEYWORD,autodesk
 DOMAIN-KEYWORD,cnki
+DOMAIN-KEYWORD,ddys
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
