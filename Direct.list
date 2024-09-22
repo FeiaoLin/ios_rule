@@ -6,12 +6,15 @@ DOMAIN-SUFFIX,time.windows.com
 DOMAIN-SUFFIX,lanzov.com
 DOMAIN-SUFFIX,hao123.com
 DOMAIN-SUFFIX,autodesk.com
+DOMAIN-SUFFIX,subhd.tv
+DOMAIN-SUFFIX,ddys.info
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,baidu
 DOMAIN-KEYWORD,autodesk
 DOMAIN-KEYWORD,cnki
 DOMAIN-KEYWORD,ddys
+DOMAIN-KEYWORD,subhd
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
