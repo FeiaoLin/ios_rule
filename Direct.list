@@ -11,12 +11,14 @@ DOMAIN-SUFFIX,ddys.info
 DOMAIN-SUFFIX,lfanas.asia
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,csdn.net
+DOMAIN-SUFFIX,archdaily.cn
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,baidu
 DOMAIN-KEYWORD,autodesk
 DOMAIN-KEYWORD,cnki
 DOMAIN-KEYWORD,subhd
+DOMAIN-KEYWORD,archdaily
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
