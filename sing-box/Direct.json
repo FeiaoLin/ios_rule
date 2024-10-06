@@ -2,27 +2,26 @@
   "version": 1,
   "rules": [
     {
-      "domain": [
-        "weixinsxy.com",
-        "wxapp.tc.qq.com"
-      ]
-    },
-    {
       "domain_suffix": [
-        ".weixinsxy.com",
-        ".wxapp.tc.qq.com"
+        "time.windows.com",
+        "lanzov.com",
+        "hao123.com",
+        "autodesk.com",
+        "subhd.tv",
+        "ddys.info",
+        "lfanas.asia",
+        "bing.com",
+        "csdn.net",
+        "archdaily.cn"
       ]
     },
     {
       "domain_keyword": [
-        "cherrytv",
-        "cherr"
-      ]
-    },
-    {
-      "ip_cidr": [
-        "129.226.3.47/32",
-        "162.62.163.63/32"
+        "autodesk",
+        "csdn",
+        "lfanas",
+        "ddys",
+        "cnki"
       ]
     }
   ]
