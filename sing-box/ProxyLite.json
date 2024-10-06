@@ -2,27 +2,36 @@
   "version": 1,
   "rules": [
     {
-      "domain": [
-        "weixinsxy.com",
-        "wxapp.tc.qq.com"
-      ]
-    },
-    {
       "domain_suffix": [
-        ".weixinsxy.com",
-        ".wxapp.tc.qq.com"
+        "gaytube.com",
+        "phncdn.com",
+        "phprcdn.com",
+        "porngub.com",
+        "pornhub-deutsch.net",
+        "pornhubapparel.com",
+        "pornhub.com",
+        "pornhub.org",
+        "pornhubpremium.com",
+        "twitter.com",
+        "x.com",
+        "seejav.bid",
+        "xsijishe.net",
+        "sijishes.com",
+        "xvideos.com",
+        "hlj.fun",
+        "heavy-r.com",
+        "xhamster.com",
+        "cloud.lyun.pro",
+        "dash.996cloud.top",
+        "piratebay.live",
+        "onlyfans.com",
+        "tagss04.pro",
+        "tagss05.pro"
       ]
     },
     {
       "domain_keyword": [
-        "cherrytv",
-        "cherr"
-      ]
-    },
-    {
-      "ip_cidr": [
-        "129.226.3.47/32",
-        "162.62.163.63/32"
+        "sijishe"
       ]
     }
   ]
