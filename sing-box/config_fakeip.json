@@ -89,12 +89,12 @@
         "final": "🐟 漏网之鱼",
     "rules": [
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
-      { "clash_mode": ["direct", "Direct"], "outbound": "🎯 全球直连" },
+      { "clash_mode": "direct", "outbound": "🎯 全球直连" },
       { "clash_mode": "global", "outbound": "GLOBAL" },
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },
       { "ip_is_private": true, "outbound": "🎯 全球直连" },
       { "rule_set": "geosite-openai", "outbound": "🤖 OpenAI" },
-      { "rule_set": ["geosite-youtube", "ProxyLite"], "outbound": "📹 YouTube" },
+      { "rule_set": "geosite-youtube", "outbound": "📹 YouTube" },
       { "rule_set": ["geoip-google", "geosite-google"], "outbound": "🍀 Google" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "📲 Telegram" },
       { "rule_set": "geosite-tiktok", "outbound": "🎵 TikTok" },
@@ -105,9 +105,7 @@
       { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
     ],
     
-    "rule_set": [
-      { "tag": "ProxyLite", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/FeiaoLin/ios_rule/refs/heads/main/sing-box/ProxyLite.json", "download_detour": "🎯 全球直连" },
-      { "tag": "Direct", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/FeiaoLin/ios_rule/refs/heads/main/sing-box/Direct.json", "download_detour": "🎯 全球直连" },
+    "rule_set": [     
       { "tag": "geosite-openai", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs", "download_detour": "🎯 全球直连" },
