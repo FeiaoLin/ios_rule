@@ -102,10 +102,11 @@
       { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "🎥 Netflix" },
       { "rule_set": ["geoip-apple", "geosite-apple", "geosite-microsoft"], "outbound": "🪟 科技公司" },
       { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
-      { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
+      { "rule_set": ["geoip-cn", "geosite-cn", "lfa-direct"], "outbound": "🎯 全球直连" }
     ],
     
     "rule_set": [     
+     { "tag": "lfa-direct", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/direct.srs", "download_detour": "🎯 全球直连" },
       { "tag": "lfa-proxy", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/proxy.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-openai", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-pornhub", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/pornhub.srs", "download_detour": "🎯 全球直连" },
