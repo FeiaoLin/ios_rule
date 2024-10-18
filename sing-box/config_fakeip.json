@@ -102,7 +102,7 @@
       { "rule_set": ["geoip-google", "geosite-google"], "outbound": "🍀 Google" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "📲 Telegram" },
       { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "🎥 Netflix" },
-      { "rule_set": ["geoip-apple", "geosite-apple", "geosite-microsoft", "geosite-nvidia", "geosite-nvidia@cn"], "outbound": "🪟 科技公司" },
+      { "rule_set": ["geoip-apple", "geosite-apple", "geosite-microsoft", "geosite-nvidia", "geosite-nvidia-cn"], "outbound": "🪟 科技公司" },
       { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
       { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
     ],
@@ -125,7 +125,7 @@
       { "tag": "geosite-telegram", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-netflix", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs", "download_detour": "🎯 全球直连" },
-      { "tag": "geosite-nvidia@cn", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/nvidia@cn.srs", "download_detour": "🎯 全球直连" },
+      { "tag": "geosite-nvidia-cn", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/nvidia@cn.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-nvidia", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/nvidia.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs", "download_detour": "🎯 全球直连" },
