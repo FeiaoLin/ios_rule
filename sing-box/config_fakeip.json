@@ -100,7 +100,6 @@
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "📲 Telegram" },
       { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "🎥 Netflix" },
       { "rule_set": ["geoip-apple", "geosite-apple", "geosite-microsoft", "geosite-nvidia", "geosite-nvidia-cn"], "outbound": "🪟 科技公司" },
-      { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
       { "rule_set": ["geosite-epicgames", "geosite-tencent-games", "geosite-2kgames", "geosite-steam", "geosite-blizzard", "geosite-rockstar", "geosite-gog", "geosite-ea"], "outbound": "🎮️ Games" },
       { "rule_set": ["geosite-github", "geosite-docker"], "outbound": "🪁 Proxy" },
       { "rule_set": "lfa-proxy", "outbound": "🪁 Proxy" },
@@ -140,7 +139,6 @@
       { "tag": "geosite-rockstar", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/rockstar.srs", "download_detour": "🎯 全球直连" },  
       { "tag": "geosite-autodesk", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/autodesk.srs", "download_detour": "🎯 全球直连" }, 
       { "tag": "geosite-adobe", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/adobe.srs", "download_detour": "🎯 全球直连" }, 
-      { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🎯 全球直连" }
     ]
