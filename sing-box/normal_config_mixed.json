@@ -104,7 +104,7 @@
       { "rule_set": "geosite-openai", "outbound": "🤖 OpenAI" },
       { "rule_set": ["geosite-github", "geosite-docker"], "outbound": "🪁 Proxy" },
       { "rule_set": ["geosite-youtube",  "geosite-twitter", "geosite-instagram", "geosite-pinterest"], "outbound": "📹 国外媒体" },
-      { "rule_set": ["geoip-google", "geosite-google", "geosite-google-scholar"], "outbound": "🍀 Google" },
+      { "rule_set": ["geoip-google", "geosite-google", "geosite-googlescholar"], "outbound": "🍀 Google" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "📲 Telegram" },
       { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "🎥 Netflix" },
       { "rule_set": ["geoip-apple", "geosite-apple", "geosite-microsoft", "geosite-nvidia", "geosite-nvidia-cn"], "outbound": "🪟 科技公司" },
@@ -144,7 +144,7 @@
       { "tag": "geosite-autodesk", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/autodesk.srs", "download_detour": "🎯 全球直连" }, 
       { "tag": "geosite-adobe", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/adobe.srs", "download_detour": "🎯 全球直连" }, 
       { "tag": "geosite-sci-hub", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/sci-hub.srs", "download_detour": "🎯 全球直连" }, 
-      { "tag": "geosite-google-scholar", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google-scholar.srs", "download_detour": "🎯 全球直连" }, 
+      { "tag": "geosite-googlescholar", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google-scholar.srs", "download_detour": "🎯 全球直连" }, 
       { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🎯 全球直连" }
