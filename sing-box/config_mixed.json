@@ -106,7 +106,7 @@
       { "rule_set": ["geoip-google", "geosite-google"], "outbound": "🍀 Google" },
       { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "📲 Telegram" },
       { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "🎥 Netflix" },
-      { "rule_set": ["geosite-nvidia", "geosite-nvidia-cn"], "outbound": "🪟 科技公司" },
+      { "rule_set": ["geosite-apple", "geosite-microsoft", "geosite-nvidia", "geosite-nvidia-cn"], "outbound": "🪟 科技公司" },
       { "rule_set": ["geosite-epicgames", "geosite-tencent-games", "geosite-2kgames", "geosite-steam", "geosite-blizzard", "geosite-rockstar", "geosite-gog", "geosite-ea"], "outbound": "🎮️ Games" },
       { "rule_set": ["geosite-github", "geosite-docker", "lfa-proxy"], "outbound": "🪁 Proxy" },
       { "rule_set": ["geoip-cn", "geosite-cn", "lfa-direct", "geosite-autodesk", "geosite-adobe"], "outbound": "🎯 全球直连" },
