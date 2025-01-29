@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "ptfans.cc",
+        "kufei.org",
+        "hdtime.org",
+        "ptcafe.club",
+        "ubits.club",
+        "raingfh.top",
+        "pt.cdfile.org",
+        "m-team.cc",
+        "m-team.io",
+        "pt.btschool.club",
+        "ubits.club",
+        "ptlgs.org",
+        "time.windows.com",
+        "lanzov.com",
+        "hao123.com",
+        "autodesk.com",
+        "subhd.tv",
+        "ddys.info",
+        "lfanas.asia",
+        "lfanas.cn",
+        "deepseek.com",
+        "bing.com",
+        "csdn.net",
+        "zuadr.com",
+        "sketchup.com",
+        "archdaily.cn"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "autodesk",
+        "zuadr",
+        "csdn",
+        "lfanas",
+        "3dwarehouse",
+        "ddys",
+        "kufei",
+        "hdtime",
+        "ptcafe",
+        "raingfh",
+        "cdfile",
+        "m-team",
+        "btschool",
+        "ptfans",
+        "cnki"
+      ]
+    }
+  ]
+}
