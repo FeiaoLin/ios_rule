@@ -119,8 +119,8 @@
     ],
 
     "rule_set": [     
-      { "tag": "lfa-direct", "type": "remote", "format": "binary", "url": "https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/lfa-direct.srs", "download_detour": "🎯 全球直连" },
-      { "tag": "lfa-proxy", "type": "remote", "format": "binary", "url": "https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/lfa-proxy.srs", "download_detour": "🎯 全球直连" },
+      { "tag": "lfa-direct", "type": "remote", "format": "binary", "url": "https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/lfa-direct.json", "download_detour": "🎯 全球直连" },
+      { "tag": "lfa-proxy", "type": "remote", "format": "binary", "url": "https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/lfa-proxy.json", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-openai", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-pornhub", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/pornhub.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-xvideos", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/xvideos.srs", "download_detour": "🎯 全球直连" },
