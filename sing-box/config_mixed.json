@@ -1,70 +1,70 @@
 {
   "log": {
+    "disabled": false,
     "level": "info",
     "timestamp": true
   },
+  
   "experimental": {
     "clash_api": {
-      "external_controller": "0.0.0.0:9090",
-      "external_ui": "ui",
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "/etc/sing-box/ui",
       "secret": "",
-      "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
-      "external_ui_download_detour": "🎯 全球直连",
+      "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "🚀 节点选择",
       "default_mode": "rule"
-      }
     },
-  "dns": {
-    "servers": [
-      {"tag": "proxyDns", "address": "tls://8.8.8.8", "address_resolver": "localDns", "address_strategy": "ipv4_only", "detour": "🚀 节点选择"},
-      {"tag": "localDns", "address": "223.5.5.5", "detour": "🎯 全球直连"},
-      {"tag": "fakeip", "address": "fakeip"},
-      {"tag": "block", "address": "rcode://success"}
-    ],
-    "rules": [
-      {"outbound": "any", "server": "localDns", "disable_cache": true},
-      {"clash_mode": "direct", "server": "localDns"},
-      {"clash_mode": "global", "server": "proxyDns"},
-      {"rule_set": "geosite-cn", "server": "localDns"},
-      {"query_type": ["A", "AAAA"], "rule_set": "geosite-geolocation-!cn", "server": "fakeip"},
-      {"rule_set": "geosite-geolocation-!cn", "server": "proxyDns"},
-      {"query_type": ["A", "AAAA"], "server": "fakeip"}
-    ],
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    },
-    "final": "localDns",
-    "independent_cache": true,
-    "strategy": "prefer_ipv4"
+  "cache_file": {
+    "enabled": true,
+    "path": "/etc/sing-box/cache.db",
+    "store_fakeip": false
+    }
   },
 
-  "inbounds": [
-    {
-      "type": "tun",
-      "inet4_address": "172.19.0.1/30",
-      "mtu": 9000,
-      "auto_route": true,
-      "strict_route": true,
-      "sniff": true,
-      "endpoint_independent_nat": false,
-      "stack": "system",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "0.0.0.0",
-          "server_port": 2080
-        }
+ "dns": 
+ {
+   "servers": 
+   [
+     {"tag": "dns_direct", "address": "223.5.5.5", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
+     {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
+   ],
+   "rules": 
+   [
+     {"outbound": "any", "server": "dns_direct", "disable_cache": true},
+     {"clash_mode": "Direct", "server": "dns_direct"},
+     {"clash_mode": "Global", "server": "dns_proxy"},
+     {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
+     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
+   ],
+   "final": "dns_proxy",
+   "strategy": "ipv4_only"
+},
+
+"inbounds": [
+  {
+    "type": "tun",
+    "address": "172.19.0.1/30",
+    "mtu": 9000,
+    "auto_route": true,
+    "auto_redirect": true,
+    "strict_route": true,
+    "stack": "system",
+    "platform": {
+      "http_proxy": {
+        "enabled": true,
+        "server": "127.0.0.1",
+        "server_port": 2080
       }
-    },
-    {
-      "type": "mixed",
-      "listen": "0.0.0.0",
-      "listen_port": 2080,
-      "sniff": true,
-      "users": []
     }
-  ],
+  },
+  {
+    "type": "mixed",
+    "listen": "127.0.0.1",
+    "listen_port": 2080,
+    "sniff": true,
+    "users": []
+  }
+],
 
   
   "outbounds": [
