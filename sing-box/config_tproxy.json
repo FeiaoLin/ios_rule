@@ -14,6 +14,11 @@
       "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
     }
+     "cache_file": {
+    "enabled": true,
+    "path": "/etc/sing-box/cache.db",
+    "store_fakeip": false
+    }
   },
 
  "dns": 
