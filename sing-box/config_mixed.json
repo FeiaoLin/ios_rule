@@ -103,7 +103,7 @@
       { "clash_mode": "global", "outbound": "GLOBAL" },
       { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },
       { "ip_is_private": true, "outbound": "🎯 全球直连" },
-      { "rule_set": ["geosite-openai", "geosite-chat"], "outbound": "🤖 OpenAI" },
+      { "rule_set": "geosite-openai", "outbound": "🤖 OpenAI" },
       { "rule_set": ["geosite-youtube", "geosite-pornhub", "geosite-twitter", "geosite-instagram", "geosite-pinterest", "geosite-xvideos"], "outbound": "📹 国外媒体" },
       { "rule_set": ["geoip-google", "geosite-google"], "outbound": "🍀 Google" },
       { "rule_set": "geosite-microsoft@cn", "outbound": "🪟 Microsoft" }, 
@@ -121,7 +121,6 @@
     "rule_set": [     
       { "tag": "lfa-direct", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/lfa-direct.srs", "download_detour": "🎯 全球直连" },
       { "tag": "lfa-proxy", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/lfa-proxy.srs", "download_detour": "🎯 全球直连" },
-      { "tag": "geosite-chat", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "🚀 节点选择" },
       { "tag": "geosite-openai", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-pornhub", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/pornhub.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-xvideos", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/xvideos.srs", "download_detour": "🎯 全球直连" },
