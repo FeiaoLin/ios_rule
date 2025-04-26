@@ -106,6 +106,7 @@
 "rule_set": [     
       { "tag": "lfa-direct", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/lfa-direct.srs", "download_detour": "🎯 全球直连" },
       { "tag": "lfa-proxy", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.github.com/FeiaoLin/ios_rule/main/sing-box/lfa-proxy.srs", "download_detour": "🎯 全球直连" },
+      { "tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "🚀 节点选择" },
       { "tag": "geosite-chat", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "🚀 节点选择" },
       { "tag": "geosite-openai", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-pornhub", "type": "remote", "format": "binary", "url": "https://ghproxy.cc/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/pornhub.srs", "download_detour": "🎯 全球直连" },
