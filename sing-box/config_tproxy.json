@@ -8,16 +8,11 @@
   "experimental": {
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
-      "external_ui": "/etc/sing-box/ui",
+      "external_ui": "ui",
       "secret": "",
       "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "🚀 节点选择",
       "default_mode": "rule"
-    },
-  "cache_file": {
-    "enabled": true,
-    "path": "",
-    "store_fakeip": false
     }
   },
 
