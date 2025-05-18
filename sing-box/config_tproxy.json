@@ -25,7 +25,7 @@
  {
    "servers": 
    [
-     {"tag": "dns_direct", "address": "udp://192.168.3.100:5335", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
+     {"tag": "dns_direct", "address": "udp://192.168.3.100:5225", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
      {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
    ],
    "rules": 
