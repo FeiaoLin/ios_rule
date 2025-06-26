@@ -3,6 +3,7 @@
   "rules": [
     {
       "domain_suffix": [
+        "open.cd",
         "ptfans.cc",
         "kufei.org",
         "hdtime.org",
@@ -20,7 +21,6 @@
         "time.windows.com",
         "lanzov.com",
         "hao123.com",
-        "autodesk.com",
         "subhd.tv",
         "ddys.info",
         "lfanas.asia",
@@ -29,7 +29,11 @@
         "bing.com",
         "csdn.net",
         "zuadr.com",
+        "autodesk.com",
         "sketchup.com",
+        "rhino3d.com",
+        "rhino3d-inc.cn",
+        "mcneel.com",
         "archdaily.cn",
         "chaos.com",
         "chaosgroup.com",
@@ -39,12 +43,9 @@
     },
     {
       "domain_keyword": [
-        "autodesk",
-        "zuadr",
         "csdn",
         "lfanas",
-        "3dwarehouse",
-        "ddys",
+         "ddys",
         "kufei",
         "nicept",
         "hdtime",
@@ -55,6 +56,14 @@
         "btschool",
         "ptfans",
         "cnki",
+        "zuadr",
+        "autodesk",
+        "3dwarehouse",
+        "sketchup",
+        "rhino3d",
+        "rhino3d-inc",
+        "mcneel",
+        "archdaily",
         "chaos",
         "chaosgroup",
         "vsean"
