@@ -88,7 +88,7 @@
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
      {"rule_set": "geosite-private", "outbound": "🎯 全球直连"},
-     {"rule_set":  ["lfa-direct", "geosite-amap"], "outbound": "🎯 全球直连"},
+     {"rule_set":  "lfa-direct", "outbound": "🎯 全球直连"},
      { "rule_set": ["geosite-openai", "geosite-chat"], "outbound": "🤖 OpenAI" },
      { "rule_set": ["geosite-youtube", "geosite-pornhub", "geosite-twitter", "geosite-instagram", "geosite-pinterest", "geosite-xvideos"], "outbound": "📹 国外媒体" },
      { "rule_set": ["geoip-google", "geosite-google"], "outbound": "🍀 Google" },
@@ -101,7 +101,7 @@
      { "rule_set": "lfa-proxy", "outbound": "🪁 Proxy" },
      { "rule_set": ["geosite-github", "geosite-docker"], "outbound": "👨‍💻 Github"},
      { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
-     { "rule_set": ["geoip-cn", "geosite-cn", "geosite-autodesk", "geosite-adobe"], "outbound": "🎯 全球直连" }
+     { "rule_set": ["geoip-cn", "geosite-cn", "geosite-autodesk", "geosite-adobe", "geosite-amap"], "outbound": "🎯 全球直连" }
    ],
     
 "rule_set": [     
