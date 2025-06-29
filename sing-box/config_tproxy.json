@@ -93,7 +93,7 @@
      { "rule_set": ["geosite-youtube", "geosite-pornhub", "geosite-twitter", "geosite-instagram", "geosite-pinterest", "geosite-xvideos"], "outbound": "📹 国外媒体" },
      { "rule_set": ["geoip-google", "geosite-google"], "outbound": "🍀 Google" },
      { "rule_set": "geosite-microsoft@cn", "outbound": "🪟 Microsoft" }, 
-     { "rule_set": ["geosite-nvidia-cn","geosite-nvidia"], "outbound": "🪟 Nvidia" }, 
+     { "rule_set": ["geosite-nvidia-cn", "geosite-nvidia"], "outbound": "🪟 Nvidia" }, 
      { "rule_set": ["geoip-apple", "geosite-apple"], "outbound": "🍏 Apple" },
      { "rule_set": ["geoip-telegram", "geosite-telegram"], "outbound": "📲 Telegram" },
      { "rule_set": ["geoip-netflix", "geosite-netflix"], "outbound": "🎥 Netflix" },
