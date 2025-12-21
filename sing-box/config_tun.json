@@ -82,7 +82,7 @@
       { "action": "sniff", "sniffer": ["http", "tls", "quic", "dns"] },
       
       {
-        "source_ip": ["192.168.3.26"],
+        "source_ip_cidr": ["192.168.3.26"],
         "port": [ 9091, 9092],
         "port_range": ["58989:58993"],
         "action": "route",
@@ -90,7 +90,7 @@
       },
    
       {
-        "source_ip": ["192.168.3.10"],
+        "source_ip_cidr": ["192.168.3.10"],
         "port": [5353, 27031, 27036, 27037],
         "port_range": ["47984:48010"],
         "action": "route",
