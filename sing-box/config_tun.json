@@ -97,9 +97,8 @@
         "outbound": "🎯 全球直连"
       },
 
-      { "clash_mode": "direct", "server": "local" }, 
-      { "clash_mode": "global", "server": "foreign" },
-
+      { "clash_mode": "direct", "outbound": "🎯 全球直连" },
+      { "clash_mode": "global", "outbound": "🚀 节点选择" },
       
      { "rule_set": "geosite-private", "outbound": "🎯 全球直连"},
      { "rule_set": ["lfa-direct", "geosite-autodesk", "geosite-adobe", "geosite-amap"], "outbound": "🎯 全球直连"},
