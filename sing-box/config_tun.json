@@ -27,8 +27,8 @@
       { "tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15" }
     ],
     "rules": [
-      { "clash_mode": "direct", "server": "local" },
-      { "clash_mode": "global", "server": "foreign" },
+      { "clash_mode": "direct", "outbound": "🎯 全球直连" },
+      { "clash_mode": "global", "outbound": "GLOBAL" },
       { "rule_set": ["geosite-cn", "geosite-private"], "server": "local" },
       { "query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1 }
     ],
@@ -98,7 +98,7 @@
       },
 
       { "clash_mode": "direct", "outbound": "🎯 全球直连" },
-      { "clash_mode": "global", "outbound": "🚀 节点选择" },
+      { "clash_mode": "global", "outbound": "GLOBAL" },
       
      { "rule_set": "geosite-private", "outbound": "🎯 全球直连"},
      { "rule_set": ["lfa-direct", "geosite-autodesk", "geosite-adobe", "geosite-amap"], "outbound": "🎯 全球直连"},
