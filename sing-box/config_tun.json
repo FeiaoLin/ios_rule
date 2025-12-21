@@ -27,7 +27,7 @@
       { "tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15" }
     ],
     "rules": [
-      { "clash_mode": "direct", "server": "🎯 全球直连" },
+      { "clash_mode": "direct", "server": "local" },
       { "clash_mode": "global", "server": "foreign" },
       { "rule_set": ["geosite-cn", "geosite-private"], "server": "local" },
       { "query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1 }
