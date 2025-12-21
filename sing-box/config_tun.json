@@ -1,54 +1,21 @@
 {
-  "log": {
-    "disabled": false,
-    "level": "info",
-    "timestamp": true
-  },
-  "experimental": {
-    "cache_file": {
-      "enabled": true,
-      "path": "/tmp/sing-box-cache.db",
-      "store_fakeip": true
-    },
-    "clash_api": {
-      "external_controller": "0.0.0.0:9999",
-      "external_ui": "/etc/sing-box/ui",
-      "secret": "",
-      "external_ui_download_url": "https://codeload.github.com/haishanh/yacd/zip/refs/heads/gh-pages",
-      "external_ui_download_detour": "🎯 全球直连",
-      "default_mode": "rule"
-    }
-  },
   "dns": {
     "servers": [
-      { "tag": "local", "type": "udp", "server": "192.168.3.1" },
-      { "tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local" },
-      { "tag": "foreign", "type": "https", "server": "dns.google", "domain_resolver": "local" },
-      { "tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15" }
+      {"tag": "local", "type": "udp", "server": "192.168.3.1"},
+      {"tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
+      {"tag": "foreign", "type": "https", "server": "dns.google", "domain_resolver": "local"},
+      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
     "rules": [
-      { "clash_mode": "direct", "server": "local" },
-      { "clash_mode": "global", "server": "foreign" },
-      { "rule_set": ["geosite-cn", "geosite-private"], "server": "local" },
-      { "query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1 }
+      {"clash_mode": "direct", "server": "local"},
+      {"clash_mode": "global", "server": "foreign"},
+      {"rule_set": ["geosite-cn", "geosite-steamcn", "geosite-apple"], "server": "local"},
+      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
     "final": "foreign",
     "strategy": "ipv4_only",
     "independent_cache": true
   },
-  "inbounds": [
-    {
-      "tag": "tun-in",
-      "type": "tun",
-      "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"],
-      "mtu": 9000,
-      "auto_route": true,
-      "auto_redirect": true,
-      "strict_route": true,
-      "sniff": true,
-      "sniff_override_destination": true
-    }
-  ],
   "outbounds": [
 
     { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🔯 香港自动", "🔯 美国自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换", "♻️ 自动选择",  "🎯 全球直连"] },
@@ -78,25 +45,13 @@
   ],
   "route": {
     "rules": [
-      { "protocol": "dns", "action": "hijack-dns" },
       { "action": "sniff", "sniffer": ["http", "tls", "quic", "dns"] },
+      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       
-      {
-        "source_ip_cidr": ["192.168.3.26"],
-        "port": [ 9091, 9092],
-        "port_range": ["58989:58993"],
-        "action": "route",
-        "outbound": "🎯 全球直连"
-      },
-   
-      {
-        "source_ip_cidr": ["192.168.3.10"],
-        "port": [5353, 27031, 27036, 27037],
-        "port_range": ["47984:48010"],
-        "action": "route",
-        "outbound": "🎯 全球直连"
-      },
-
+      {"source_ip_cidr": ["192.168.3.26"], "port": [ 9091, 9092], "port_range": ["58989:58993"], "action": "route", "outbound": "🎯 全球直连"},
+      {"source_ip_cidr": ["192.168.3.10"], "port": [ 5353, 27031, 27036, 27037], "port_range": ["47984:48010"], "action": "route", "outbound": "🎯 全球直连"},   
+      {"ip_is_private": true, "outbound": "➡️ 直连"},
+      
       { "clash_mode": "direct", "outbound": "🎯 全球直连" },
       { "clash_mode": "global", "outbound": "GLOBAL" },
       
@@ -116,10 +71,7 @@
      { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
      { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
     ],
-    "final": "🐟 漏网之鱼",
-    "auto_detect_interface": true,
-    "default_domain_resolver": { "server": "local" },
-    "rule_set": [
+   "rule_set": [
       { "tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-amap", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amap.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-chat", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "🎯 全球直连" },
@@ -159,5 +111,42 @@
       { "tag": "lfa-direct", "type": "remote", "format": "binary", "url": "https://gitee.com/linfeiao/ios_rule/raw/main/sing-box/lfa-direct.srs", "download_detour": "🎯 全球直连" },
       { "tag": "lfa-proxy", "type": "remote", "format": "binary", "url": "https://gitee.com/linfeiao/ios_rule/raw/main/sing-box/lfa-proxy.srs", "download_detour": "🎯 全球直连" }
     ]
-  }
+    "final": "🐠 漏网之鱼",
+    "auto_detect_interface": true,
+    "default_domain_resolver": {"server": "public"}
+  },
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "auto_redirect": true,
+      "strict_route": true
+    }
+  ],
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "/etc/momo/run/cache.db",
+      "store_fakeip": true
+    },
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "/etc/sing-box/ui",
+      "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "➡️ 直连",
+      "secret": "",
+      "default_mode": "rule"
+    }
+  },
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+     }
 }
