@@ -54,6 +54,9 @@
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
 
+     {"source_ip": ["192.168.3.26"], "port": [9091, 9092],  "port_range": ["58989:58993"], "action": "route", "outbound": "🎯 全球直连"},
+     {"source_ip": ["192.168.3.10"], "port": [5353, 27031, 27036, 27037],  "port_range": ["47984:48010"], "action": "route", "outbound": "🎯 全球直连"},
+      
      { "rule_set": "geosite-private", "outbound": "🎯 全球直连"},
      { "rule_set": ["lfa-direct", "geosite-autodesk", "geosite-adobe", "geosite-amap"], "outbound": "🎯 全球直连"},
      { "rule_set": ["geosite-openai", "geosite-chat"], "outbound": "🤖 OpenAI" },
