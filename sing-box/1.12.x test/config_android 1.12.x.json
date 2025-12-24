@@ -70,6 +70,7 @@
    
     ],
     "rule_set": [
+      {"tag": "geosite-fakeipfilter", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json", "download_detour": "🎯 全球直连"},
       { "tag": "lfa-direct", "type": "remote", "format": "binary", "url": "https://gitee.com/linfeiao/ios_rule/raw/main/sing-box/lfa-direct.srs", "download_detour": "🎯 全球直连" },
       { "tag": "lfa-proxy", "type": "remote", "format": "binary", "url": "https://gitee.com/linfeiao/ios_rule/raw/main/sing-box/lfa-proxy.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-amap", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amap.srs", "download_detour": "🎯 全球直连" },
