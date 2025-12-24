@@ -122,7 +122,7 @@
       ],
       "mtu": 9000,
       "auto_route": true,
-      "auto_redirect": true,
+      "auto_redirect": false,
       "strict_route": false
     },
     {
