@@ -9,7 +9,7 @@
     "rules": [
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "foreign"},
-      {"rule_set": ["geosite-cn", "geosite-steamcn", "geosite-apple"], "server": "local"},
+      {"rule_set": ["geosite-cn", "geosite-apple", "lfa-direct", "geosite-autodesk", "geosite-adobe", "geosite-amap" ], "server": "local"},
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
     "final": "foreign",
@@ -50,8 +50,7 @@
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
      
-      { "rule_set": "geosite-private", "outbound": "🎯 全球直连"},
-     { "rule_set": ["lfa-direct", "geosite-autodesk", "geosite-adobe", "geosite-amap"], "outbound": "🎯 全球直连"},
+     { "rule_set": "geosite-private", "outbound": "🎯 全球直连"},
      { "rule_set": ["geosite-openai", "geosite-chat"], "outbound": "🤖 OpenAI" },
      { "rule_set": ["geosite-youtube", "geosite-pornhub", "geosite-twitter", "geosite-instagram", "geosite-pinterest", "geosite-xvideos"], "outbound": "📹 国外媒体" },
      { "rule_set": ["geoip-google", "geosite-google"], "outbound": "🍀 Google" },
