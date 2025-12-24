@@ -7,6 +7,9 @@
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
     "rules": [
+      {"client_subnet": "192.168.3.27/32","server": "local"},
+      {"client_subnet": "192.168.3.26/32","server": "local"},  
+      {"client_subnet": "192.168.3.10/32","server": "local"}, 
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "foreign"},
       {"rule_set": ["geosite-cn", "geosite-apple", "lfa-direct", "geosite-autodesk", "geosite-adobe", "geosite-amap" ], "server": "local"},
