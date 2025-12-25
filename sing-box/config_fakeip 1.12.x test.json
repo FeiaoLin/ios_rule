@@ -53,8 +53,8 @@
       {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
-      {"source_ip": ["192.168.3.26/32", "192.168.3.27/32"], "type": "logical",  "mode": "or",  "rules": [{ "port": [6881, 6882, 6883, 6884, 6885] }, { "port_range": ["50000:65535"] }  ],  "outbound": "🎯 全球直连"},
-      {"source_ip": ["192.168.3.10/32"], "type": "logical",  "mode": "or",  "rules": [{ "port": [5353, 27031, 27036, 27037] }, { "port_range": ["47984:48010"] }  ],  "outbound": "🎯 全球直连"},
+      {"source_ip_cidr": ["192.168.3.26/32", "192.168.3.27/32"], "type": "logical",  "mode": "or",  "rules": [{ "port": [6881, 6882, 6883, 6884, 6885] }, { "port_range": ["50000:65535"] }  ],  "outbound": "🎯 全球直连"},
+      {"source_ip_cidr": ["192.168.3.10/32"], "type": "logical",  "mode": "or",  "rules": [{ "port": [5353, 27031, 27036, 27037] }, { "port_range": ["47984:48010"] }  ],  "outbound": "🎯 全球直连"},
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
 
