@@ -7,6 +7,7 @@
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
     "rules": [
+      {"client_subnet":["192.168.3.10/32", "192.168.3.11/32", "192.168.3.12/32", "192.168.3.13/32", "192.168.3.27/32", "192.168.3.26/32"] ,"server": "local"},
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "fakeip"},
       {"query_type": "HTTPS", "action": "reject"},
@@ -54,6 +55,9 @@
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
 
+      {"source_ip_cidr": ["192.168.3.26/32"], "port": [ 9091, 9092], "port_range": ["58989:58993"], "action": "route", "outbound": "🎯 全球直连" },
+      {"source_ip_cidr": ["192.168.3.27/32"], "port": [ 9091, 9092], "port_range": ["58989:58993"], "action": "route", "outbound": "🎯 全球直连" },
+      {"source_ip_cidr": ["192.168.3.10/32"], "port": [ 5353, 27031, 27036, 27037], "port_range": ["47984:48010"], "action": "route", "outbound": "🎯 全球直连" },
       
      { "rule_set": "geosite-private", "outbound": "🎯 全球直连"},
      { "rule_set": ["lfa-direct", "geosite-autodesk", "geosite-adobe", "geosite-amap"], "outbound": "🎯 全球直连"},
