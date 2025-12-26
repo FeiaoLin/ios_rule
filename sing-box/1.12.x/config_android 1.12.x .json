@@ -113,7 +113,7 @@
     "default_domain_resolver": {"server": "public"}
   },
   "inbounds": [
-      {
+    {
       "tag": "tun-in",
       "type": "tun",
       "address": [
