@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "open.cd",
+        "ptfans.cc",
+        "kufei.org",
+        "hdtime.org",
+        "ptcafe.club",
+        "ubits.club",
+        "raingfh.top",
+        "pt.cdfile.org",
+        "m-team.cc",
+        "m-team.io",
+        "btschool.club",
+        "ubits.club",
+        "ptlgs.org",
+        "ptl.gs",
+        "nicept.net",
+        "time.windows.com",
+        "lanzov.com",
+        "hao123.com",
+        "subhd.tv",
+        "ddys.info",
+        "lfanas.asia",
+        "lfanas.cn",
+        "deepseek.com",
+        "bing.com",
+        "csdn.net",
+        "zuadr.com",
+        "autodesk.com",
+        "sketchup.com",
+        "rhino3d.com",
+        "rhino3d-inc.cn",
+        "mcneel.com",
+        "archdaily.cn",
+        "chaos.com",
+        "chaosgroup.com",
+        "vsean.net",
+        "open.cd"
+      ]
+    },
+    {
+      "domain_keyword": [
+        "csdn",
+        "lfanas",
+         "ddys",
+        "kufei",
+        "nicept",
+        "hdtime",
+        "ptcafe",
+        "raingfh",
+        "cdfile",
+        "m-team",
+        "btschool",
+        "ptfans",
+        "cnki",
+        "zuadr",
+        "autodesk",
+        "3dwarehouse",
+        "sketchup",
+        "rhino3d",
+        "rhino3d-inc",
+        "mcneel",
+        "archdaily",
+        "chaos",
+        "chaosgroup",
+        "vsean"
+      ]
+    }
+  ]
+}
