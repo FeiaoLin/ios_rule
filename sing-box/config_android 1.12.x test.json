@@ -9,6 +9,7 @@
     "rules": [
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "fakeip"},
+      {"query_type": "HTTPS", "action": "reject"},
       {"rule_set": "geosite-fakeipfilter", "server": "local"},
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1},
       {"rule_set": "geosite-cn", "server": "local"}
