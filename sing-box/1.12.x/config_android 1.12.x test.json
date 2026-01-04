@@ -54,7 +54,7 @@
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
-     { "rule_set": "ads", "outbound": "🚫 block" },
+      { "rule_set": "ads", "outbound": "🚫 block" },
       { "rule_set": "geosite-openai", "outbound": "🤖 OpenAI" },
       { "rule_set": ["geosite-youtube", "geosite-pornhub", "geosite-twitter", "geosite-instagram", "geosite-pinterest", "geosite-xvideos"], "outbound": "📹 国外媒体" },
       { "rule_set": ["geoip-google", "geosite-google"], "outbound": "🍀 Google" },

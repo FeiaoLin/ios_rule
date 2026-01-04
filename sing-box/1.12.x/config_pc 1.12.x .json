@@ -7,7 +7,7 @@
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15"}
     ],
     "rules": [
-         {"clash_mode": "direct", "server": "local"},
+      {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "fakeip"},
       {"rule_set": "geosite-fakeipfilter", "server": "local"},
       {"rule_set": "geosite-cn", "server": "local" },
