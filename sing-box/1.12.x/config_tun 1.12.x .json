@@ -7,7 +7,7 @@
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
     "rules": [
-
+      {"client_subnet": "192.168.3.0/24", "server": "local" },
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "foreign"},
       {"rule_set": "geosite-cn",  "server": "local"},
@@ -76,7 +76,7 @@
     "rule_set": [
       { "tag": "lfa-direct", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/FeiaoLin/ios_rule/raw/refs/heads/main/sing-box/lfa-direct.srs", "download_detour": "🎯 全球直连" },
       { "tag": "lfa-proxy", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/FeiaoLin/ios_rule/raw/refs/heads/main/sing-box/lfa-proxy.srs", "download_detour": "🎯 全球直连" },
-      {"tag": "geosite-fakeipfilter", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json", "download_detour": "🎯 全球直连"},
+      { "tag": "geosite-fakeipfilter", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json", "download_detour": "🎯 全球直连"},
       { "tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-amap", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amap.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-chat", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "🎯 全球直连" },

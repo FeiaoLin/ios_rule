@@ -8,8 +8,7 @@
 
     ],
     "rules": [
-      { "protocol": "dns", "action": "hijack-dns" }, 
-      { "port": 53, "outbound": "🎯 全球直连" },
+
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "fakeip"},
       {"rule_set": "geosite-fakeipfilter", "server": "public"},
