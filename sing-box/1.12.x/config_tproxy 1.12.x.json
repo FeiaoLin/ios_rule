@@ -20,10 +20,6 @@
         "detour": "🚀 节点选择"
       },
       {
-        "tag": "block",
-        "type": "fake-ip"
-      },
-      {
         "tag": "fakeip",
         "type": "fakeip",
         "inet4_range": "198.18.0.0/15",
@@ -34,7 +30,6 @@
       {"outbound": "any", "server": "local"},
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "fakeip"},
-      {"rule_set": "geosite-category-ads-all", "server": "block"},
       {"rule_set": "geosite-fakeipfilter", "server": "public"},
       {"rule_set": "geosite-cn", "server": "public"},
       {"rule_set": "geosite-geolocation-!cn", "server": "fakeip", "rewrite_ttl": 1},
