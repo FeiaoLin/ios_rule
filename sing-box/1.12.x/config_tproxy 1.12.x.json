@@ -1,31 +1,14 @@
 {
   "dns": {
     "servers": [
-        {        "tag": "local",        "type": "udp",        "server": "192.168.3.1",        "detour": "direct"      },
-        {
-          "tag": "public",
-          "type": "https",
-          "server": "https://223.5.5.5/dns-query",
-          "detour": "direct"
-        },
-        {
-          "tag": "foreign",
-          "type": "https",
-          "server": "https://1.1.1.1/dns-query",
-          "detour": "🚀 节点选择"
-        },
-        {
-          "tag": "block",
-          "type": "fake-ip"
-        },
-        {
-          "tag": "fakeip",
-          "type": "fakeip",
-          "inet4_range": "198.18.0.0/15",
-          "inet6_range": "fc00::/18"
-        }
+      {"tag": "local", "type": "udp", "server": "192.168.3.1"},
+      {"tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
+      {"tag": "foreign", "type": "https", "server": "dns.google", "domain_resolver": "local"},
+      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
+
     ],
     "rules": [
+
       {"clash_mode": "direct", "server": "local"},
       {"clash_mode": "global", "server": "fakeip"},
       {"rule_set": "geosite-fakeipfilter", "server": "public"},
@@ -140,21 +123,22 @@
     ],
     "final": "🐟 漏网之鱼",
     "auto_detect_interface": true,
-    "default_mark": 233
+    "default_domain_resolver": {"server": "public"}
   },
   "inbounds": [
     {
-      "tag": "tun-in",
-      "type": "tun",
-      "interface_name": "sing-tun",
-      "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"],
-      "mtu": 1500,
-      "auto_route": true,
-      "auto_redirect": false,
-      "strict_route": false,
-      "stack": "mixed",
-      "sniff": true,
-      "sniff_override_destination": true
+    "type": "tproxy",
+    "tag": "tproxy-in",
+    "listen": "::",
+    "listen_port": 7895, 
+    "sniff": true,
+    "sniff_override_destination": true
+    },
+{
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "::",
+      "listen_port": 53
     },
     {
       "type": "mixed",
