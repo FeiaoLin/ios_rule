@@ -1,4 +1,28 @@
 {
+   "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+ 
+   "experimental": {
+    "clash_api": {
+      "external_controller": "0.0.0.0:9999",
+      "external_ui": "/etc/sing-box/ui",
+      "external_ui_download_url": "https://gh-proxy.com/https://codeload.github.com/haishanh/yacd/zip/refs/heads/gh-pages",
+      "external_ui_download_detour": "🎯 全球直连",
+      "secret": "",
+      "default_mode": "rule"
+    },
+   "cache_file": {
+      "enabled": true,
+      "path": "/etc/sing-box/cache.db",
+      "store_fakeip": true
+    }
+  },
+
+
+
   "dns": {
     "servers": [
       {"tag": "local", "type": "udp", "server": "192.168.3.1"},
@@ -24,6 +48,17 @@
     "disable_cache": false,
     "disable_expire": false
   },
+  "inbounds": [
+    {
+    "type": "tproxy",
+    "tag": "tproxy-in",
+    "listen": "::",
+    "listen_port": 7895, 
+    "sniff": true,
+    "sniff_override_destination": true
+    }
+  ],
+
   "outbounds": [
     { "tag": "🚀 节点选择", "type": "selector", "outbounds": ["🔯 香港自动", "🔯 美国自动", "🔯 新加坡自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换", "♻️ 自动选择",  "🎯 全球直连"] },
     { "tag": "🪁 Proxy", "type": "selector", "outbounds": ["🚀 节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换", "🎯 全球直连"] },
@@ -124,50 +159,7 @@
     "final": "🐟 漏网之鱼",
     "auto_detect_interface": true,
     "default_domain_resolver": {"server": "public"}
-  },
-  "inbounds": [
-    {
-    "type": "tproxy",
-    "tag": "tproxy-in",
-    "listen": "::",
-    "listen_port": 7895, 
-    "sniff": true,
-    "sniff_override_destination": true
-    },
-{
-      "type": "direct",
-      "tag": "dns-in",
-      "listen": "::",
-      "listen_port": 53
-    },
-    {
-      "type": "mixed",
-      "tag": "mixed-in",
-      "listen": "0.0.0.0",
-      "listen_port": 7890,
-      "sniff": true,
-      "sniff_override_destination": true,
-      "set_system_proxy": false
-    }
-  ],
-  "experimental": {
-    "cache_file": {
-      "enabled": true,
-      "path": "/etc/momo/run/cache.db",
-      "store_fakeip": true
-    },
-    "clash_api": {
-      "external_controller": "0.0.0.0:9999",
-      "external_ui": "/etc/momo/run/ui",
-      "external_ui_download_url": "https://gh-proxy.com/https://codeload.github.com/haishanh/yacd/zip/refs/heads/gh-pages",
-      "external_ui_download_detour": "🎯 全球直连",
-      "secret": "",
-      "default_mode": "rule"
-    }
-  },
-  "log": {
-    "disabled": false,
-    "level": "debug",
-    "timestamp": true
   }
+
+
 }
