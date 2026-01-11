@@ -55,6 +55,8 @@
     "listen": "::",
     "listen_port": 7895, 
     "sniff": true,
+    "tcp_fast_open": true,
+    "udp_fragment": true,
     "sniff_override_destination": true
     }
   ],
