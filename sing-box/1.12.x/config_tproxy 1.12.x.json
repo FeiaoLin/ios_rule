@@ -14,7 +14,8 @@
       {"rule_set": "geosite-fakeipfilter", "server": "public"},
       {"rule_set": "geosite-cn", "server": "public"},
       {"rule_set": "geosite-geolocation-!cn", "server": "fakeip", "rewrite_ttl": 1},
-      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
+      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1},
+      {"outbound": "any", "server": "local"}
     ],
     "final": "foreign",
     "strategy": "prefer_ipv4",
@@ -52,13 +53,12 @@
   "route": {
     "rules": [
       {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
-      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "outbound": "dns-out"},
+      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"ip_cidr": ["192.168.3.0/24"], "outbound": "🎯 全球直连"},
-      {"ip_cidr": ["192.168.3.1/32"], "outbound": "🎯 全球直连"},
-      {"ip_is_private": true, "outbound": "🎯 全球直连"},
       {"source_ip_cidr": ["192.168.3.26/32"], "port": [9091, 9092], "port_range": ["58989:58993"], "outbound": "🎯 全球直连"},
       {"source_ip_cidr": ["192.168.3.27/32"], "port": [9091, 9092], "port_range": ["58989:58993"], "outbound": "🎯 全球直连"},
       {"source_ip_cidr": ["192.168.3.10/32"], "port": [5353, 27031, 27036, 27037], "port_range": ["47984:48010"], "outbound": "🎯 全球直连"},
+      {"ip_is_private": true, "outbound": "🎯 全球直连"},
       {"clash_mode": "direct", "outbound": "🎯 全球直连"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
 
