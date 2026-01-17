@@ -3,7 +3,7 @@
     "servers": [
       {"tag":"local","type":"udp","server":"192.168.3.1"},
       {"tag":"public","type":"https","server":"dns.alidns.com","domain_resolver":"local"},
-      {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"?? ????"}
+      {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"}
     ],
     "rules": [
       {"clash_mode":"direct","server":"local"},
