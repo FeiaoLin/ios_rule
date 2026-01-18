@@ -1,37 +1,43 @@
 {
   "dns": {
     "servers": [
-      {"tag":"local","type":"udp","server":"172.16.10.12"},
-      {"tag":"public","type":"udp","server":"172.16.10.12","domain_resolver":"local"},
-      {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"},
-      {"tag":"fakeip","type":"fakeip","inet4_range":"198.18.0.0/15"}
+      {"tag":"local","type":"udp","server":"192.168.3.1"},
+      {"tag":"public","type":"https","server":"dns.alidns.com","domain_resolver":"local"},
+      {"tag":"foreign","type":"https","server":"dns.google","domain_resolver":"local"},
+      {"tag":"fakeip","type":"fakeip","inet4_range":"198.18.0.0/15","inet6_range":"fc00::/18"}
     ],
     "rules": [
       {"clash_mode":"direct","server":"local"},
       {"clash_mode":"global","server":"fakeip"},
-      {"rule_set":"geosite-fakeipfilter","server":"local"},
-      {"rule_set":"geosite-cn","server":"local"},
-      {"rule_set":"geosite-geolocation-!cn","server":"fakeip","rewrite_ttl":1}
+      {"rule_set":"geosite-fakeipfilter","server":"public"},
+      {"rule_set":"geosite-cn","server":"public"},
+      {"rule_set":"geosite-geolocation-!cn","server":"fakeip","rewrite_ttl":1},
+      {"query_type":["A","AAAA"],"server":"fakeip","rewrite_ttl":1},
+      {"outbound":"any","server":"local"}
     ],
     "final": "foreign",
-    "client_subnet": "223.5.5.0/24",
     "strategy": "prefer_ipv4",
     "independent_cache": true,
-    "reverse_mapping": true
+    "reverse_mapping": true,
+    "disable_cache": false,
+    "disable_expire": false
   },
   "inbounds": [
-    {"type":"mixed","listen":"127.0.0.1","listen_port":7890}
+    {"type":"tproxy","tag":"tproxy-in","listen":"::","listen_port":7895,"sniff":true,"tcp_fast_open":true,"udp_fragment":true,"sniff_override_destination":true}
   ],
   "route": {
     "rules": [
       {"action":"sniff","sniffer":["http","tls","quic","dns"]},
       {"type":"logical","mode":"or","rules":[{"port":53},{"protocol":"dns"}],"action":"hijack-dns"},
+      {"ip_cidr":["192.168.3.0/24"],"outbound":"🎯 全球直连"},
+      {"source_ip_cidr":["192.168.3.26/32"],"port":[9091,9092],"port_range":["58989:58993"],"outbound":"🎯 全球直连"},
+      {"source_ip_cidr":["192.168.3.27/32"],"port":[9091,9092],"port_range":["58989:58993"],"outbound":"🎯 全球直连"},
+      {"source_ip_cidr":["192.168.3.10/32"],"port":[5353,27031,27036,27037],"port_range":["47984:48010"],"outbound":"🎯 全球直连"},
       {"ip_is_private":true,"outbound":"🎯 全球直连"},
       {"clash_mode":"direct","outbound":"🎯 全球直连"},
       {"clash_mode":"global","outbound":"GLOBAL"},
       {"rule_set":"geosite-private","outbound":"🎯 全球直连"},
       {"rule_set":["lfa-direct","geosite-autodesk","geosite-adobe","geosite-amap"],"outbound":"🎯 全球直连"},
-      {"rule_set":"anti-ad","outbound":"🚫 block"},
       {"rule_set":["geosite-openai","geosite-chat"],"outbound":"🤖 OpenAI"},
       {"rule_set":["geosite-youtube","geosite-pornhub","geosite-twitter","geosite-instagram","geosite-pinterest","geosite-xvideos"],"outbound":"📹 国外媒体"},
       {"rule_set":["geoip-google","geosite-google"],"outbound":"🍀 Google"},
@@ -49,7 +55,6 @@
     "rule_set": [
       {"tag":"lfa-direct","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/ios_rule/raw/refs/heads/main/sing-box/lfa-direct.srs","download_detour":"🎯 全球直连"},
       {"tag":"lfa-proxy","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/ios_rule/raw/refs/heads/main/sing-box/lfa-proxy.srs","download_detour":"🎯 全球直连"},
-      {"tag":"anti-ad","type":"remote","format":"source","url":"https://anti-ad.net/anti-ad-sing-box.srs","download_detour":"🎯 全球直连"},
       {"tag":"geosite-fakeipfilter","type":"remote","format":"source","url":"https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json","download_detour":"🎯 全球直连"},
       {"tag":"geosite-private","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs","download_detour":"🎯 全球直连"},
       {"tag":"geosite-amap","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amap.srs","download_detour":"🎯 全球直连"},
@@ -118,22 +123,21 @@
     {"tag":"🔯 美国自动","type":"urltest","outbounds":["{all}"],"filter":[{"action":"include","keywords":["🇺🇸|US|us|美国|美|United States"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
     {"tag":"♻️ 自动选择","type":"urltest","outbounds":["{all}"],"filter":[{"action":"exclude","keywords":["网站|地址|剩余|过期|时间|有效"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
     {"tag":"GLOBAL","type":"selector","outbounds":["🚀 节点选择","♻️ 自动选择","🎯 全球直连","🇭🇰 香港节点","🇯🇵 日本节点","🇺🇲 美国节点","🐸 手动切换"]},
-    {"tag":"🚫 block","type":"block"},
-    {"tag":"🎯 全球直连","type":"direct"}
+    {"tag":"🎯 全球直连","type":"direct","routing_mark":1}
   ],
   "experimental": {
-    "cache_file": {
-      "enabled": true,
-      "path": "cache.db",
-      "store_fakeip": true
-    },
     "clash_api": {
-      "external_controller": "127.0.0.1:9999",
-      "external_ui": "ui",
+      "external_controller": "0.0.0.0:9999",
+      "external_ui": "/etc/sing-box/ui",
       "external_ui_download_url": "https://gh-proxy.com/https://codeload.github.com/haishanh/yacd/zip/refs/heads/gh-pages",
       "external_ui_download_detour": "🎯 全球直连",
       "secret": "",
       "default_mode": "rule"
+    },
+    "cache_file": {
+      "enabled": true,
+      "path": "/etc/sing-box/cache.db",
+      "store_fakeip": true
     }
   },
   "log": {

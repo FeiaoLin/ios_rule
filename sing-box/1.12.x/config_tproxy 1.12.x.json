@@ -3,27 +3,21 @@
     "servers": [
       {"tag":"local","type":"udp","server":"192.168.3.1"},
       {"tag":"public","type":"https","server":"dns.alidns.com","domain_resolver":"local"},
-      {"tag":"foreign","type":"https","server":"dns.google","domain_resolver":"local"},
-      {"tag":"fakeip","type":"fakeip","inet4_range":"198.18.0.0/15","inet6_range":"fc00::/18"}
+      {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"}
     ],
     "rules": [
       {"clash_mode":"direct","server":"local"},
-      {"clash_mode":"global","server":"fakeip"},
-      {"rule_set":"geosite-fakeipfilter","server":"public"},
-      {"rule_set":"geosite-cn","server":"public"},
-      {"rule_set":"geosite-geolocation-!cn","server":"fakeip","rewrite_ttl":1},
-      {"query_type":["A","AAAA"],"server":"fakeip","rewrite_ttl":1},
-      {"outbound":"any","server":"local"}
+      {"clash_mode":"global","server":"foreign"},
+      {"domain_suffix":["services.googleapis.cn","googleapis.cn","xn--ngstr-lra8j.com"],"server":"foreign"},
+      {"rule_set":"geosite-google","server":"foreign"},
+      {"rule_set":["geosite-cn","geosite-apple","geosite-private"],"server":"local"}
     ],
     "final": "foreign",
-    "strategy": "prefer_ipv4",
-    "independent_cache": true,
-    "reverse_mapping": true,
-    "disable_cache": false,
-    "disable_expire": false
+    "strategy": "ipv4_only",
+    "independent_cache": true
   },
   "inbounds": [
-    {"type":"tproxy","tag":"tproxy-in","listen":"::","listen_port":7895,"sniff":true,"tcp_fast_open":true,"udp_fragment":true,"sniff_override_destination":true}
+    {"type":"tproxy","tag":"tproxy-in","listen":"0.0.0.0","listen_port":7895}
   ],
   "route": {
     "rules": [
@@ -95,6 +89,7 @@
     ],
     "final": "🐟 漏网之鱼",
     "auto_detect_interface": true,
+    "default_mark": 666,
     "default_domain_resolver": {
       "server": "public"
     }
@@ -123,7 +118,7 @@
     {"tag":"🔯 美国自动","type":"urltest","outbounds":["{all}"],"filter":[{"action":"include","keywords":["🇺🇸|US|us|美国|美|United States"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
     {"tag":"♻️ 自动选择","type":"urltest","outbounds":["{all}"],"filter":[{"action":"exclude","keywords":["网站|地址|剩余|过期|时间|有效"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
     {"tag":"GLOBAL","type":"selector","outbounds":["🚀 节点选择","♻️ 自动选择","🎯 全球直连","🇭🇰 香港节点","🇯🇵 日本节点","🇺🇲 美国节点","🐸 手动切换"]},
-    {"tag":"🎯 全球直连","type":"direct","routing_mark":1}
+    {"tag":"🎯 全球直连","type":"direct"}
   ],
   "experimental": {
     "clash_api": {
@@ -137,7 +132,7 @@
     "cache_file": {
       "enabled": true,
       "path": "/etc/sing-box/cache.db",
-      "store_fakeip": true
+      "store_fakeip": false
     }
   },
   "log": {

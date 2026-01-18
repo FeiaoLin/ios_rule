@@ -123,7 +123,7 @@
       "enabled": true
     },
     "clash_api": {
-      "external_controller": "127.0.0.1:9095",
+      "external_controller": "127.0.0.1:9999",
       "secret": "",
       "default_mode": "rule"
     }
