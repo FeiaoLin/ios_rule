@@ -1,0 +1,137 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+  
+  "experimental": {
+  "cache_file": {
+    "enabled": true
+    }
+  },
+  
+  "dns": {
+    "servers": [
+      {"tag": "proxyDns", "address": "https://dns.google/dns-query", "address_resolver": "defaultDns", "address_strategy": "ipv4_only", "detour": "棣冩畬 閼哄倻鍋ｉ柅澶嬪"},
+      {"tag": "localDns", "address": "223.5.5.5", "address_resolver": "defaultDns", "address_strategy": "ipv4_only", "detour": "棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag": "defaultDns", "address": "223.5.5.5", "address_strategy": "ipv4_only", "detour": "棣冨箚 閸忋劎鎮嗛惄纾嬬箾"}
+    ],
+    "rules": [
+      { "outbound": "any", "server": "defaultDns", "disable_cache": true },
+      { "clash_mode": "direct", "server": "localDns" },
+      { "clash_mode": "global", "server": "proxyDns" },
+      { "rule_set": "geosite-cn", "server": "localDns" },
+      { "rule_set": "geosite-geolocation-!cn", "server": "proxyDns" }
+    ],
+    "final": "localDns",
+    "strategy": "ipv4_only"
+  },
+
+"inbounds": [
+  {
+    "type": "tun",
+    "address": "172.19.0.1/30",
+    "mtu": 9000,
+    "auto_route": true
+  }
+],
+
+ "outbounds": [
+    {"tag":"棣冩畬 閼哄倻鍋ｉ柅澶嬪","type":"selector","outbounds":["棣冩暜 妫ｆ瑦鑵愰懛顏勫З","棣冩暜 缂囧骸娴楅懛顏勫З","棣冩暜 閺傛澘濮為崸陇鍤滈崝?","棣冨殶棣冨殺 妫ｆ瑦鑵愰懞鍌滃仯","棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯","棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯","棣冩儧 閹靛濮╅崚鍥ㄥ床","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冨箚 閸忋劎鎮嗛惄纾嬬箾"]},
+    {"tag":"棣冪崐 Proxy","type":"selector","outbounds":["棣冩畬 閼哄倻鍋ｉ柅澶嬪","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冩暜 妫ｆ瑦鑵愰懛顏勫З","棣冨殶棣冨殺 妫ｆ瑦鑵愰懞鍌滃仯","棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯","棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯","棣冩儧 閹靛濮╅崚鍥ㄥ床","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冨箚 閸忋劎鎮嗛惄纾嬬箾"]},
+    {"tag":"棣冩噯閳ュ稅鐓?Github","type":"selector","outbounds":["棣冩畬 閼哄倻鍋ｉ柅澶嬪","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冩暜 妫ｆ瑦鑵愰懛顏勫З","棣冨殶棣冨殺 妫ｆ瑦鑵愰懞鍌滃仯","棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯","棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯","棣冩儧 閹靛濮╅崚鍥ㄥ床"]},
+    {"tag":"棣冩懘 閸ヨ棄顦绘刊鎺嶇秼","type":"selector","outbounds":["棣冩畬 閼哄倻鍋ｉ柅澶嬪","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冩暜 妫ｆ瑦鑵愰懛顏勫З","棣冨殶棣冨殺 妫ｆ瑦鑵愰懞鍌滃仯","棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯","棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯","棣冩儧 閹靛濮╅崚鍥ㄥ床"]},
+    {"tag":"棣冾樆 OpenAI","type":"selector","outbounds":["棣冩暜 閺傛澘濮為崸陇鍤滈崝?","棣冨毇棣冨殲 閺傛澘濮為崸陇濡悙?","棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯","棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯","棣冩畬 閼哄倻鍋ｉ柅澶嬪","棣冩儧 閹靛濮╅崚鍥ㄥ床"]},
+    {"tag":"棣冨箖閿?Games","type":"selector","outbounds":["棣冨箚 閸忋劎鎮嗛惄纾嬬箾","閳句紮绗?閼奉亜濮╅柅澶嬪"]},
+    {"tag":"棣冪嵃 Microsoft","type":"selector","outbounds":["棣冨箚 閸忋劎鎮嗛惄纾嬬箾","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冩暜 妫ｆ瑦鑵愰懛顏勫З"]},
+    {"tag":"棣冪嵃 Nvidia","type":"selector","outbounds":["棣冨箚 閸忋劎鎮嗛惄纾嬬箾","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冩暜 妫ｆ瑦鑵愰懛顏勫З"]},
+    {"tag":"棣冨礂 Apple","type":"selector","outbounds":["棣冨箚 閸忋劎鎮嗛惄纾嬬箾","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冩暜 妫ｆ瑦鑵愰懛顏勫З"]},
+    {"tag":"棣冨磥 Google","type":"selector","outbounds":["棣冩暜 閺傛澘濮為崸陇鍤滈崝?","棣冩暜 缂囧骸娴楅懛顏勫З","棣冩暜 妫ｆ瑦鑵愰懛顏勫З","棣冩儧 閹靛濮╅崚鍥ㄥ床"]},
+    {"tag":"棣冩懍 Telegram","type":"selector","outbounds":["棣冩畬 閼哄倻鍋ｉ柅澶嬪","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冩暜 妫ｆ瑦鑵愰懛顏勫З","棣冨殶棣冨殺 妫ｆ瑦鑵愰懞鍌滃仯","棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯","棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯","棣冩儧 閹靛濮╅崚鍥ㄥ床"]},
+    {"tag":"棣冨复 Netflix","type":"selector","outbounds":["棣冩畬 閼哄倻鍋ｉ柅澶嬪","閳句紮绗?閼奉亜濮╅柅澶嬪","棣冩暜 妫ｆ瑦鑵愰懛顏勫З","棣冨殶棣冨殺 妫ｆ瑦鑵愰懞鍌滃仯","棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯","棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯","棣冩儧 閹靛濮╅崚鍥ㄥ床"]},
+    {"tag":"棣冩偡 濠曞繒缍夋稊瀣","type":"selector","outbounds":["棣冩畬 閼哄倻鍋ｉ柅澶嬪","棣冨箚 閸忋劎鎮嗛惄纾嬬箾","棣冨殶棣冨殺 妫ｆ瑦鑵愰懞鍌滃仯","棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯","棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯","棣冩儧 閹靛濮╅崚鍥ㄥ床"]},
+    {"tag":"棣冩儧 閹靛濮╅崚鍥ㄥ床","type":"selector","outbounds":["{all}"]},
+    {"tag":"棣冨殶棣冨殺 妫ｆ瑦鑵愰懞鍌滃仯","type":"selector","outbounds":["{all}"],"filter":[{"action":"include","keywords":["棣冨殶棣冨殺|HK|hk|妫ｆ瑦鑵恷濞撶槃HongKong"]}]},
+    {"tag":"棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯","type":"selector","outbounds":["{all}"],"filter":[{"action":"include","keywords":["棣冨殹棣冨毃|JP|jp|閺冦儲婀皘Japan"]}]},
+    {"tag":"棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯","type":"selector","outbounds":["{all}"],"filter":[{"action":"include","keywords":["棣冨毉棣冨毇|US|us|缂囧骸娴梶缂囧藩United States"]}]},
+    {"tag":"棣冨毇棣冨殲 閺傛澘濮為崸陇濡悙?","type":"selector","outbounds":["{all}"],"filter":[{"action":"include","keywords":["棣冨毇棣冨殲|SGP|sgp|閺傛澘濮為崸顢係ingapore"]}]},
+    {"tag":"棣冩暜 閺傛澘濮為崸陇鍤滈崝?","type":"urltest","outbounds":["{all}"],"filter":[{"action":"include","keywords":["棣冨毇棣冨殲|SGP|sgp|閺傛澘濮為崸顢係ingapore"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
+    {"tag":"棣冩暜 妫ｆ瑦鑵愰懛顏勫З","type":"urltest","outbounds":["{all}"],"filter":[{"action":"include","keywords":["棣冨殶棣冨殺|HK|hk|妫ｆ瑦鑵恷濞撶槃HongKong"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
+    {"tag":"棣冩暜 缂囧骸娴楅懛顏勫З","type":"urltest","outbounds":["{all}"],"filter":[{"action":"include","keywords":["棣冨毉棣冨毇|US|us|缂囧骸娴梶缂囧藩United States"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
+    {"tag":"閳句紮绗?閼奉亜濮╅柅澶嬪","type":"urltest","outbounds":["{all}"],"filter":[{"action":"exclude","keywords":["缂冩垹鐝瘄閸︽澘娼億閸撯晙缍憒鏉╁洦婀閺冨爼妫縷閺堝鏅?"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
+    {"tag":"GLOBAL", "type": "selector", "outbounds": ["棣冩畬 閼哄倻鍋ｉ柅澶嬪", "閳句紮绗?閼奉亜濮╅柅澶嬪", "棣冨箚 閸忋劎鎮嗛惄纾嬬箾", "棣冨殶棣冨殺 妫ｆ瑦鑵愰懞鍌滃仯", "棣冨殹棣冨毃 閺冦儲婀伴懞鍌滃仯", "棣冨毉棣冨殽 缂囧骸娴楅懞鍌滃仯", "棣冩儧 閹靛濮╅崚鍥ㄥ床"] },
+    { "tag": "棣冨箚 閸忋劎鎮嗛惄纾嬬箾", "type": "direct" },
+    { "tag": "dns-out", "type": "dns" }
+  ],
+  
+  "route": {
+        "auto_detect_interface": true,
+        "final": "棣冩偡 濠曞繒缍夋稊瀣",
+    "rules": [
+      { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
+      { "ip_is_private": true, "outbound": "棣冨箚 閸忋劎鎮嗛惄纾嬬箾" },
+      { "clash_mode": "direct", "outbound": "棣冨箚 閸忋劎鎮嗛惄纾嬬箾" },
+      { "clash_mode": "global", "outbound": "GLOBAL" },
+      { "rule_set": "ads", "action": "reject" },
+      { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "棣冨箚 閸忋劎鎮嗛惄纾嬬箾" },
+      {"rule_set":"geosite-private","outbound":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"rule_set":["lfa-direct","geosite-autodesk","geosite-adobe","geosite-amap"],"outbound":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"rule_set":"geosite-openai","outbound":"棣冾樆 OpenAI"},
+      {"rule_set":["geosite-youtube","geosite-pornhub","geosite-twitter","geosite-instagram","geosite-pinterest","geosite-xvideos"],"outbound":"棣冩懘 閸ヨ棄顦绘刊鎺嶇秼"},
+      {"rule_set":["geoip-google","geosite-google"],"outbound":"棣冨磥 Google"},
+      {"rule_set":"geosite-microsoft@cn","outbound":"棣冪嵃 Microsoft"},
+      {"rule_set":["geosite-nvidia-cn","geosite-nvidia"],"outbound":"棣冪嵃 Nvidia"},
+      {"rule_set":["geoip-apple","geosite-apple"],"outbound":"棣冨礂 Apple"},
+      {"rule_set":["geoip-telegram","geosite-telegram"],"outbound":"棣冩懍 Telegram"},
+      {"rule_set":["geoip-netflix","geosite-netflix"],"outbound":"棣冨复 Netflix"},
+      {"rule_set":["geosite-epicgames","geosite-tencent-games","geosite-2kgames","geosite-steam","geosite-blizzard","geosite-rockstar","geosite-gog","geosite-ea"],"outbound":"棣冨箖閿?Games"},
+      {"rule_set":["lfa-proxy"],"outbound":"棣冪崐 Proxy"},
+      {"rule_set":["geosite-github","geosite-docker"],"outbound":"棣冩噯閳ュ稅鐓?Github"},
+      {"rule_set":["geoip-cn","geosite-cn"],"outbound":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"rule_set":"geosite-geolocation-!cn","outbound":"棣冩畬 閼哄倻鍋ｉ柅澶嬪"}
+    ],
+    
+    "rule_set": [
+      {"tag":"geosite-fakeipfilter","type":"remote","format":"source","url":"https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-private","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"lfa-direct","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/ios_rule/raw/refs/heads/main/sing-box/lfa-direct.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"lfa-proxy","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/ios_rule/raw/refs/heads/main/sing-box/lfa-proxy.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"ads","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/adblockfilters/raw/refs/heads/main/lite-ads.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-amap","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amap.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-openai","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-pornhub","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/pornhub.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-xvideos","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/xvideos.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-twitter","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/twitter.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-youtube","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-pinterest","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/pinterest.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-instagram","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/instagram.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geoip-google","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-google","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-github","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-docker","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/docker.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geoip-telegram","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-telegram","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geoip-netflix","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-netflix","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-nvidia-cn","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/nvidia@cn.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-nvidia","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/nvidia.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geoip-apple","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-apple","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-microsoft@cn","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft@cn.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-epicgames","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/epicgames.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-tencent-games","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tencent-games.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-2kgames","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/2kgames.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-steam","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-blizzard","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/blizzard.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-ea","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/ea.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-gog","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/gog.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-rockstar","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/rockstar.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-autodesk","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/autodesk.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-adobe","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/adobe.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-geolocation-!cn","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geoip-cn","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"},
+      {"tag":"geosite-cn","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs","download_detour":"棣冨箚 閸忋劎鎮嗛惄纾嬬箾"}
+    ]
+  }
+}
