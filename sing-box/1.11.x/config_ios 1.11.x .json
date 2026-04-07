@@ -41,7 +41,7 @@
       {"rule_set":"geosite-geolocation-!cn","outbound":"🚀 节点选择"}
     ],
     "rule_set": [
-      {"tag":"geosite-fakeipfilter","type":"remote","format":"source","url":"https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/fakeipfilter.json","download_detour":"🎯 全球直连"},
+      
       {"tag":"lfa-direct","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/ios_rule/raw/refs/heads/main/sing-box/lfa-direct.srs","download_detour":"🎯 全球直连"},
       {"tag":"lfa-proxy","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/ios_rule/raw/refs/heads/main/sing-box/lfa-proxy.srs","download_detour":"🎯 全球直连"},
       {"tag":"ads","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/adblockfilters/raw/refs/heads/main/lite-ads.srs","download_detour":"🎯 全球直连"},
