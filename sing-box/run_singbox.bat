@@ -1,16 +1,16 @@
 @echo off
-rem »ñÈ¡µ±Ç°½Å±¾ËùÔÚµÄÄ¿Â¼
+rem ï¿½ï¿½È¡ï¿½ï¿½Ç°ï¿½Å±ï¿½ï¿½ï¿½ï¿½Úµï¿½Ä¿Â¼
 set SCRIPT_DIR=%~dp0
 
-rem ½øÈëµ±Ç°Ä¿Â¼
+rem ï¿½ï¿½ï¿½ëµ±Ç°Ä¿Â¼
 cd /d "%SCRIPT_DIR%"
 
-rem Ö´ÐÐ¹æÔò¼¯±àÒëÃüÁî£¬²¢½«Êä³öÎÄ¼þ±£´æÔÚµ±Ç°Ä¿Â¼
+rem Ö´ï¿½Ð¹ï¿½ï¿½ò¼¯±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Ç°Ä¿Â¼
 .\sing-box.exe rule-set compile --output "%SCRIPT_DIR%lfa-proxy.srs" "%SCRIPT_DIR%lfa-proxy.json"
 
-rem Ö´ÐÐµÚ¶þ¸ö¹æÔò¼¯±àÒëÃüÁî£¬²¢½«Êä³öÎÄ¼þ±£´æÔÚµ±Ç°Ä¿Â¼
+rem Ö´ï¿½ÐµÚ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò¼¯±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½Ç°Ä¿Â¼
 .\sing-box.exe rule-set compile --output "%SCRIPT_DIR%lfa-direct.srs" "%SCRIPT_DIR%lfa-direct.json"
 
-rem ½Å±¾½áÊø
+rem ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½
 echo Script executed successfully.
 pause
