@@ -9,7 +9,6 @@
     "rules": [
       {"clash_mode":"direct","server":"local"},
       {"clash_mode":"global","server":"fakeip"},
-      {"domain":"gh-proxy.com","server":"local"},
       {"query_type":"HTTPS","action":"reject"},
       {"rule_set":"geosite-fakeipfilter","server":"local"},  
       {"query_type":["A","AAAA"],"server":"fakeip","rewrite_ttl":1},
@@ -22,7 +21,7 @@
     "reverse_mapping": true
   },
   "inbounds": [
-    {"tag":"tun-in","type":"tun","address":["172.19.0.1/30","fdfe:dcba:9876::1/126"],"mtu":1500,"auto_route":true,"auto_redirect":false,"strict_route":false,"stack":"gvisor"},
+    {"tag":"tun-in","type":"tun","address":["172.19.0.1/30","fdfe:dcba:9876::1/126"],"mtu":1500,"auto_route":true,"auto_redirect":false,"strict_route":false,"stack":"system"},
     {"type":"mixed","listen":"127.0.0.1","listen_port":7890}
   ],
   "route": {
@@ -89,7 +88,10 @@
       {"tag":"geosite-cn","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs","download_detour":"🎯 全球直连"}
     ],
     "final": "🐟 漏网之鱼",
-    "auto_detect_interface": true
+    "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "public"
+    }
   },
   "outbounds": [
     {"tag":"🚀 节点选择","type":"selector","outbounds":["🔯 香港自动","🔯 美国自动","🔯 新加坡自动","🇭🇰 香港节点","🇺🇲 美国节点","🐸 手动切换","♻️ 自动选择","🎯 全球直连"]},
@@ -114,7 +116,7 @@
     {"tag":"🔯 美国自动","type":"urltest","outbounds":["{all}"],"filter":[{"action":"include","keywords":["🇺🇸|US|us|美国|美|United States"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
     {"tag":"♻️ 自动选择","type":"urltest","outbounds":["{all}"],"filter":[{"action":"exclude","keywords":["网站|地址|剩余|过期|时间|有效"]}],"url":"http://www.gstatic.com/generate_204","interval":"10m","tolerance":50},
     {"tag":"GLOBAL","type":"selector","outbounds":["🚀 节点选择","♻️ 自动选择","🎯 全球直连","🇭🇰 香港节点","🇺🇲 美国节点","🐸 手动切换"]},
-    {"tag":"🎯 全球直连","type":"direct","domain_strategy":"ipv4_only","domain_resolver":"local"}
+    {"tag":"🎯 全球直连","type":"direct","domain_strategy":"ipv4_only"}
   ],
   "experimental": {
     "cache_file": {
