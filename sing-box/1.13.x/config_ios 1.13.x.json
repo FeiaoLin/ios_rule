@@ -124,7 +124,7 @@
       "external_ui": "ui",
       "external_ui_download_url": "https://gh-proxy.com/https://codeload.github.com/haishanh/yacd/zip/refs/heads/gh-pages",
       "external_ui_download_detour": "🎯 全球直连",
-      "secret": "your-secret-password",
+      "secret": "",
       "default_mode": "rule"
     }
   },
