@@ -2,18 +2,19 @@
   "dns": {
     "servers": [
       {"tag":"local","type":"udp","server":"223.5.5.5"},
-      {"tag":"public","type":"https","server":"dns.alidns.com","domain_resolver":"local"},
+      {"tag":"local_backup","type":"udp","server":"114.114.114.114"},
+      {"tag":"bootstrap","type":"udp","server":"114.114.114.114"},
+      {"tag":"public","type":"https","server":"dns.alidns.com","domain_resolver":"bootstrap"},
       {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"},
       {"tag":"fakeip","type":"fakeip","inet4_range":"198.18.0.0/15","inet6_range":"fc00::/18"}
     ],
     "rules": [
-      {"clash_mode":"direct","server":"local"},
+      {"clash_mode":"direct","server":["local", "local_backup", "public"]},
       {"clash_mode":"global","server":"fakeip"},
-      {"outbound":"any","server":"local"},
       {"query_type":"HTTPS","action":"reject"},
-      {"rule_set":"geosite-fakeipfilter","server":"local"},
+      {"rule_set":"geosite-fakeipfilter","server":["local", "local_backup", "public"]},
       {"query_type":["A","AAAA"],"server":"fakeip","rewrite_ttl":1},
-      {"rule_set":"geosite-cn","server":"local"}
+      {"rule_set":"geosite-cn","server":["local", "local_backup", "public"]}
     ],
     "final": "foreign",
     "client_subnet": "223.5.5.0/24",
