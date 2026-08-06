@@ -12,6 +12,7 @@ let proxies = await produceArtifact({
   type: /^1$|col/i.test(type) ? 'collection' : 'subscription',
   platform: 'sing-box',
   produceType: 'internal',
+  noCache: true,
 })
 
 config.outbounds.push(...proxies)
