@@ -4,8 +4,7 @@
       {"tag":"local","type":"udp","server":"172.16.10.12"},
       {"tag":"local_backup","type":"udp","server":"172.16.10.10"},
       {"tag":"public","type":"https","server":"dns.alidns.com","domain_resolver":"local"},
-      {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"},
-      {"tag":"fakeip","type":"fakeip","inet4_range":"198.18.0.0/15","inet6_range":"fc00::/18"}
+      {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"}
     ],
     "rules": [
       {"clash_mode":"direct","server":"local"},
@@ -58,7 +57,7 @@
       {"tag":"geosite-twitter","type":"remote","format":"binary","download":{"url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/twitter.srs","detour":"🎯 全球直连"}},
       {"tag":"geosite-youtube","type":"remote","format":"binary","download":{"url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs","detour":"🎯 全球直连"}},
       {"tag":"geosite-pinterest","type":"remote","format":"binary","download":{"url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/pinterest.srs","detour":"🎯 全球直连"}},
-      {"tag":"geosite-instagram","type":"remote","format":"binary","download":{"url":"https-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/instagram.srs","detour":"🎯 全球直连"}},
+      {"tag":"geosite-instagram","type":"remote","format":"binary","download":{"url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/instagram.srs","detour":"🎯 全球直连"}},
       {"tag":"geoip-google","type":"remote","format":"binary","download":{"url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs","detour":"🎯 全球直连"}},
       {"tag":"geosite-google","type":"remote","format":"binary","download":{"url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs","detour":"🎯 全球直连"}},
       {"tag":"geosite-github","type":"remote","format":"binary","download":{"url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs","detour":"🎯 全球直连"}},
