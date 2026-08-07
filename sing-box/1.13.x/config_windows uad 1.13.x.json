@@ -15,7 +15,7 @@
       {"rule_set":"geosite-cn","server":"local"}
     ],
     "final": "foreign",
-    "client_subnet": "223.5.5.0/24",
+    "client_subnet": "172.16.10.12/24",
     "strategy": "prefer_ipv4",
     "reverse_mapping": true
   },
