@@ -2,13 +2,15 @@
   "dns": {
     "servers": [
       {"tag": "local", "type": "local"},
-      {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"}
+      {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"},
+      {"tag": "fakeip", "type": "fakeip","inet4_range": "198.18.0.0/15"}
     ],
     "rules": [
       {"query_type": ["HTTPS", "SVCB"], "action": "predefined", "rcode": "NOERROR"  },
       {"rule_set":"geosite-cn","server":"local"},
       {"clash_mode":"direct","server":"local"},
-      {"clash_mode":"global","server":"foreign"}
+      {"clash_mode":"global","server":"foreign"},
+      {"query_type": ["A", "AAAA"], "server": "fakeip"}
     ],
     "final": "foreign",
     "optimistic": true,
@@ -22,6 +24,8 @@
 
   "route": {
     "rules": [
+      {"type": "logical","mode": "or","rules": [{ "port": 53 },{ "protocol": "dns" }],"action": "hijack-dns"},
+      {"action": "sniff"},
       {"ip_is_private":true,"outbound":"🎯 全球直连"},
       {"clash_mode":"direct","outbound":"🎯 全球直连"},
       {"clash_mode":"global","outbound":"GLOBAL"},
