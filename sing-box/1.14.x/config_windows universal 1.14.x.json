@@ -1,13 +1,13 @@
 {
   "dns": {
     "servers": [
-      {"tag":"public","type":"local","server":"223.5.5.5"},
+      {"tag": "local", "type": "local"},
       {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"}
     ],
     "rules": [
       {"query_type": ["HTTPS", "SVCB"], "action": "predefined", "rcode": "NOERROR"  },
-      {"rule_set":"geosite-cn","server":"public"},
-      {"clash_mode":"direct","server":"public"},
+      {"rule_set":"geosite-cn","server":"local"},
+      {"clash_mode":"direct","server":"local"},
       {"clash_mode":"global","server":"foreign"}
     ],
     "final": "foreign",
@@ -85,7 +85,7 @@
     "final": "🐟 漏网之鱼",
     "auto_detect_interface": true,
     "default_domain_resolver": {
-      "server": "public"
+      "server": "local"
     }
   },
   "outbounds": [
