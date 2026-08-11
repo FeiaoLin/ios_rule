@@ -11,10 +11,11 @@
       {"clash_mode":"global","server":"foreign"}
     ],
     "final": "foreign",
-    "optimistic": true
+    "optimistic": true,
+    "strategy": "ipv4_only"
   },
   "inbounds": [
-    {"tag":"tun-in","type":"tun","address":["172.19.0.1/30","fdfe:dcba:9876::1/126"],"mtu":9000,"auto_route": true,"strict_route": true,"stack": "system"}
+    {"tag":"tun-in","type":"tun","address":"172.19.0.1/30","mtu":1500,"auto_route": true,"strict_route": true,"stack": "system"}
   ],
 
  "http_clients": [{"tag": "direct","version": 2,"disable_version_fallback": true, "stream_receive_window": 0,"connection_receive_window": 0 } ],
