@@ -15,6 +15,18 @@ let proxies = await produceArtifact({
   noCache: true,
 })
 
+// fakeip 体系通病修复：凡是 server 为域名的节点出站，必须显式指定真实 domain_resolver，
+// 否则拨号解析会掉进 DNS 模块的 A/AAAA→fakeip，导致 dial 198.18.x 超时、节点全挂。
+const localDnsAvailable = (config.dns?.servers || []).some(s => s.tag === 'local')
+proxies.forEach(proxy => {
+  if (localDnsAvailable &&
+      typeof proxy.server === 'string' &&
+      /[a-zA-Z]/.test(proxy.server) &&
+      !proxy.domain_resolver) {
+    proxy.domain_resolver = 'local'
+  }
+})
+
 config.outbounds.push(...proxies)
 
 config.outbounds.forEach(outbound => {

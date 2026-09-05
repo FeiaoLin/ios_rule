@@ -1,7 +1,7 @@
 {
   "dns": {
     "servers": [
-      {"tag": "local", "type": "local"},
+      {"tag":"local","type":"udp","server":"192.168.3.1"},
       {"tag":"foreign","type":"https","server":"8.8.8.8","detour":"🚀 节点选择"},
       {"tag": "fakeip", "type": "fakeip","inet4_range": "198.18.0.0/15"}
     ],
@@ -20,7 +20,7 @@
     {"tag":"tproxy-in","type":"tproxy","listen":"0.0.0.0","listen_port":7895}
   ],
 
-  "http_clients": [{"tag": "direct","version": 2,"disable_version_fallback": true, "stream_receive_window": 0,"connection_receive_window": 0, "detour": "🎯 全球直连"} ],
+  "http_clients": [{"tag": "direct","version": 2,"disable_version_fallback": true, "stream_receive_window": 0,"connection_receive_window": 0, "domain_resolver": "local"} ],
 
   "route": {
     "rules": [
