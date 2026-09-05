@@ -20,7 +20,7 @@
     {"tag":"tproxy-in","type":"tproxy","listen":"0.0.0.0","listen_port":7895}
   ],
 
-  "http_clients": [{"tag": "direct","version": 2,"disable_version_fallback": true, "stream_receive_window": 0,"connection_receive_window": 0 } ],
+  "http_clients": [{"tag": "direct","version": 2,"disable_version_fallback": true, "stream_receive_window": 0,"connection_receive_window": 0, "detour": "🎯 全球直连"} ],
 
   "route": {
     "rules": [
