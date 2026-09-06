@@ -6,10 +6,10 @@
       {"tag": "fakeip", "type": "fakeip","inet4_range": "198.18.0.0/15"}
     ],
     "rules": [
+      {"query_type": ["HTTPS", "SVCB"], "action": "predefined", "rcode": "NOERROR"  },
       {"clash_mode":"direct","server":"local"},
       {"clash_mode":"global","server":"foreign"},
       {"rule_set":"geosite-cn","server":"local"},    
-      {"query_type": ["HTTPS", "SVCB"], "action": "predefined", "rcode": "NOERROR"  },
       {"query_type": ["A", "AAAA"], "server": "fakeip"}
     ],
     "final": "foreign",
@@ -20,11 +20,11 @@
     {"tag":"tun-in","type":"tun","address":"172.19.0.1/30","mtu":1500,"auto_route": true,"strict_route": true,"stack": "gvisor"}
   ],
 
- "http_clients": [{"tag": "direct","version": 2,"disable_version_fallback": true, "stream_receive_window": 0,"connection_receive_window": 0 } ],
+ "http_clients": [{"tag": "direct","version": 2,"disable_version_fallback": true, "stream_receive_window": 0,"connection_receive_window": 0, "domain_resolver": "local"} ],
 
   "route": {
     "rules": [
-      {"action":"sniff"},
+      {"action":"sniff","sniffer":["http","tls","quic","dns"]},
       {"type":"logical","mode":"or","rules":[{"port":53},{"protocol":"dns"}],"action":"hijack-dns"},
       {"ip_is_private":true,"outbound":"🎯 全球直连"},
       {"clash_mode":"direct","outbound":"🎯 全球直连"},
@@ -50,7 +50,7 @@
       {"tag":"lfa-proxy","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/ios_rule/raw/refs/heads/main/sing-box/lfa-proxy.srs","http_client":"direct"},
       {"tag":"ads","type":"remote","format":"binary","url":"https://gh-proxy.com/https://github.com/FeiaoLin/adblockfilters/raw/refs/heads/main/lite-ads.srs","http_client":"direct"},
       {"tag":"geosite-amap","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/amap.srs","http_client":"direct"},
-      {"tag":"geosite-openai","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs","http_client":"direct"},
+      {"tag":"geosite-openai","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/openai.srs","http_client":"direct"},
       {"tag":"geosite-anthropic","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/anthropic.srs","http_client":"direct"},
       {"tag":"geosite-pornhub","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/pornhub.srs","http_client":"direct"},
       {"tag":"geosite-xvideos","type":"remote","format":"binary","url":"https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/xvideos.srs","http_client":"direct"},
@@ -107,7 +107,8 @@
   ],
   "experimental": {
     "cache_file": {
-      "enabled": true
+      "enabled": true,
+      "store_fakeip": true
     },
     "clash_api": {
       "external_controller": "127.0.0.1:9999",
