@@ -1,0 +1,20 @@
+name: Sync to Gitee
+
+on:
+  push:
+    branches: [ main ] # 如果你的主分支叫 master，请把 main 改成 master
+  workflow_dispatch: # 支持在网页上手动点击触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror to Gitee
+        uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
+        with:
+          # 你的 GitHub 仓库地址
+          source-repo: git@github.com:FeiaoLin/ios_rule.git
+          # 你的 Gitee 仓库地址
+          destination-repo: git@gitee.com:LinFeiao/ios_rule.git
